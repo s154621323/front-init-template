@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {  // 编译器选项配置
+    "target": "es5",    // 编译目标为ES5，确保兼容旧版浏览器
+    "lib": ["dom", "dom.iterable", "esnext"],  // 包含的库文件：DOM类型、DOM迭代器、ES最新特性
+    "allowJs": true,    // 允许编译JavaScript文件
+    "skipLibCheck": true,  // 跳过对声明文件的类型检查，提高编译速度
+    "esModuleInterop": true,  // 启用ES模块互操作性，让import/export更灵活
+    "allowSyntheticDefaultImports": true,  // 允许从没有默认导出的模块中默认导入
+    "strict": true,     // 启用所有严格类型检查选项
+    "forceConsistentCasingInFileNames": true,  // 强制文件名大小写一致
+    "module": "esnext", // 使用ES模块系统
+    "moduleResolution": "node",  // 模块解析策略，使用Node.js的解析算法
+    "resolveJsonModule": true,   // 允许导入JSON文件
+    "isolatedModules": true,     // 确保每个文件都能独立编译
+    "noEmit": true,     // 不输出编译文件，只做类型检查
+    "jsx": "react-jsx", // JSX语法使用React 17+的新转换，无需导入React
+    "rootDir": ".",     // 项目根目录
+    "baseUrl": ".",     // 模块解析的基础路径
+    "paths": {          // 路径映射配置，创建别名
+      "@/*": ["src/*"],           // @/ 指向 src/ 目录
+      "@pages/*": ["src/pages/*"],     // @pages/ 指向 src/pages/ 目录
+      "@hooks/*": ["src/hooks/*"],     // @hooks/ 指向 src/hooks/ 目录
+      "@utils/*": ["src/utils/*"],     // @utils/ 指向 src/utils/ 目录
+      "@components/*": ["src/components/*"],  // @components/ 指向 src/components/ 目录
+      "@abis/*": ["src/abis/*"],       // @abis/ 指向 src/abis/ 目录
+      "@connections/*": ["src/connections/*"] // @connections/ 指向 src/connections/ 目录
+    }
+  },
+
+  "include": ["src", "tests"]  // 包含的目录，只对这些目录进行TypeScript编译
+}

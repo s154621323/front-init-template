@@ -1,0 +1,37 @@
+{
+  "name": "front-init-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client:dev": "webpack --mode development",
+    "client:server": "webpack serve --mode development",
+    "client:prod": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@soda/friendly-errors-webpack-plugin": "^1.8.1",
+    "@swc/core": "^1.13.3",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.4",
+    "node-notifier": "^10.0.1",
+    "style-loader": "^4.0.0",
+    "swc-loader": "^0.2.6",
+    "themed-progress-plugin": "^1.0.1",
+    "webpack": "^5.101.2",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2",
+    "webpack-merge": "^6.0.1",
+    "yargs-parser": "^22.0.0"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
