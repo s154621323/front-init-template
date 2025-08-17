@@ -1,9 +1,11 @@
 const { resolve } = require('path');
 const merge = require('webpack-merge');
 const { ThemedProgressPlugin } = require('themed-progress-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env, argv) => {
   const mode = argv.mode || 'development';
+  const _modeflag = mode === 'production';
   const envConfig = require(`./config/webpack.${mode}.js`);
 
   const baseConfig = {
@@ -58,7 +60,14 @@ module.exports = (env, argv) => {
         // stream: require.resolve('stream-browserify'),
       },
     },
-    plugins: [new ThemedProgressPlugin()],
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: _modeflag ? 'styles/[name].[contenthash:5].css' : 'styles/[name].css',
+        chunkFilename: _modeflag ? 'styles/[name].[contenthash:5].css' : 'styles/[name].css',
+        ignoreOrder: false,
+      }),
+      new ThemedProgressPlugin()
+    ],
   };
 
   return merge.default(baseConfig, envConfig);
