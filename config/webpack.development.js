@@ -50,6 +50,14 @@ module.exports = {
       },
       clearConsole: true,
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',        // 🔧 生成静态HTML文件模式
+      openAnalyzer: false,           // 🚫 不自动打开浏览器
+      reportFilename: 'report.html', // 📄 报告文件名
+      generateStatsFile: true,       // 📊 生成统计JSON文件
+      statsFilename: 'stats.json',   // 📝 统计文件名
+      defaultSizes: 'parsed',        // 📏 显示处理后的文件大小
+      excludeAssets: /\.map$/,       // 🚫 排除.map文件
+    }),
   ],
 }
