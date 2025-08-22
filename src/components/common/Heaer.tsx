@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Wallet, Home } from 'lucide-react';
+import logo from '@assets/images/logo.png';
 
 const Header = () => {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
@@ -23,7 +24,7 @@ const Header = () => {
           {/* 左侧 Logo */}
           <div className="flex items-center">
             <Link to="/" className="text-xl font-bold text-gray-800 hover:text-gray-900">
-              www.yidengfe.com
+              <img src={logo} alt="logo" className="w-10 h-10" />
             </Link>
           </div>
 
