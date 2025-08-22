@@ -1,4 +1,12 @@
+import { useState } from 'react';
+import { useImmer } from '@hooks/useImmer';
+
 const HomePage = () => {
+  const [obj, setObj] = useImmer({
+    name: '张三',
+    age: 18,
+  });
+  console.log('🐻 obj', obj);
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
       <div className="bg-white rounded-lg shadow-xl p-8 max-w-md mx-4">
@@ -19,7 +27,15 @@ const HomePage = () => {
             快速开发
           </span>
         </div>
-        <button className="w-full mt-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
+        <button
+          onClick={() => {
+            setObj(draft => {
+              draft.name = '李四';
+              draft.age = 20;
+            });
+          }}
+          className="w-full mt-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105 cursor-pointer"
+        >
           开始使用 Tailwind CSS
         </button>
       </div>
