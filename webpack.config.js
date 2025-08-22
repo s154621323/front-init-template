@@ -34,7 +34,11 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.css$/i,
-          use: ["style-loader", "css-loader"],
+          use: [
+            MiniCssExtractPlugin.loader,
+            { loader: 'css-loader', options: { importLoaders: 1 } },
+            'postcss-loader',
+          ],
         },
       ]
     },
