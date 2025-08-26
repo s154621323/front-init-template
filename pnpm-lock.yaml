@@ -39,12 +39,18 @@ importers:
       '@swc/core':
         specifier: ^1.13.3
         version: 1.13.3
+      '@types/node':
+        specifier: ^24.3.0
+        version: 24.3.0
       '@types/react':
         specifier: ^19.1.10
         version: 19.1.10
       '@types/react-dom':
         specifier: ^19.1.7
         version: 19.1.7(@types/react@19.1.10)
+      '@welldone-software/why-did-you-render':
+        specifier: ^10.0.1
+        version: 10.0.1(react@19.1.1)
       css-loader:
         specifier: ^7.1.2
         version: 7.1.2(webpack@5.101.2)
@@ -501,6 +507,11 @@ packages:
     peerDependenciesMeta:
       webpack-dev-server:
         optional: true
+
+  '@welldone-software/why-did-you-render@10.0.1':
+    resolution: {integrity: sha512-tMgGkt30iVYeLMUKExNmtm019QgyjLtA7lwB0QAizYNEuihlCG2eoAWBBaz/bDeI7LeqAJ9msC6hY3vX+JB97g==}
+    peerDependencies:
+      react: ^19
 
   '@xtuc/ieee754@1.2.0':
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
@@ -2456,6 +2467,11 @@ snapshots:
       webpack-cli: 6.0.1(webpack-bundle-analyzer@4.10.2)(webpack-dev-server@5.2.2)(webpack@5.101.2)
     optionalDependencies:
       webpack-dev-server: 5.2.2(webpack-cli@6.0.1)(webpack@5.101.2)
+
+  '@welldone-software/why-did-you-render@10.0.1(react@19.1.1)':
+    dependencies:
+      lodash: 4.17.21
+      react: 19.1.1
 
   '@xtuc/ieee754@1.2.0': {}
 

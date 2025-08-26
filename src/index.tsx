@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from '@pages/App';
+import './wdyr';
 import './style.css';
 
 const container = document.getElementById('app');
